@@ -6,11 +6,12 @@ De carácter básico, aborda temas introductorios en el mundo de las APIs y como
 - App demo en angular por [Jorge Baumann](https://twitter.com/baumannzone)
 
 
-#### API-ADDICTS
+### API-ADDICTS
 Esta es la página del evento: https://www.meetup.com/es-ES/ApiAddicts/events/240662192/
+![Api-Addicts](data/api-addicts.jpg)
 
 
-## Ejemplo
+### Ejemplo
 ![demo-proyecto](data/img.gif)
 
 ### Requsitos
