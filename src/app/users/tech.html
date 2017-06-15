@@ -1,0 +1,13 @@
+<!-- add the class 'is-organization' if the variable 'type' is Organization -->
+<div class="user" ng-class="{'is-organization': $ctrl.tech.type == 'Organization' }">
+  <small class="id">#{{ $ctrl.tech.id }}</small>
+  <small class="type">{{ $ctrl.tech.type }}</small>
+  <img class="user-logo" ng-src="{{ $ctrl.tech.avatar_url }}"/>
+  <h4 class="user-link">
+    <a ui-sref="userInfo({ id: $ctrl.tech.id })">{{ $ctrl.tech.login }}</a>
+    <span ng-if="$ctrl.tech.site_admin">
+      <i class="fa fa-lock" aria-hidden="true"></i>
+    </span>
+  </h4>
+
+</div>

@@ -1,0 +1,47 @@
+<div class="users-container">
+  <h2 class="users-h2">
+    Users
+    <span ng-click="$ctrl.showForm()">+</span>
+  </h2>
+  <div class="users">
+
+    <!-- Add user form -->
+    <div class="form user" ng-show="$ctrl.formIsVisible">
+      <h4>Crear usuario</h4>
+      <hr>
+      <label for="nickname">
+        Alias:
+        <input type="text" ng-model="$ctrl.nickname" id="nickname">
+      </label>
+      <label for="avatar">
+        URL Img:
+        <input type="text" ng-model="$ctrl.avatar" id="avatar">
+      </label>
+      <br>
+      <label for="site_admin">
+        Es admin?
+        <input type="checkbox" ng-model="$ctrl.site_admin" id="site_admin">
+      </label>
+      <br>
+      <label for="type-user">
+        <input type="radio" ng-model="$ctrl.type" value="0" id="type-user" ng-checked="true">
+        Usuario
+      </label>
+      <br>
+      <label for="type-org">
+        <input type="radio" ng-model="$ctrl.type" value="1" id="type-org">
+        Organización
+      </label>
+      <button ng-click="$ctrl.createUser($event)">Crear</button>
+      <!--<ul>-->
+        <!--<li>Nickname : {{ $ctrl.nickname }} </li>-->
+        <!--<li>Img : {{ $ctrl.avatar }} </li>-->
+        <!--<li>Es admin : {{ ctrl.site_admin }}</li>-->
+        <!--<li>Tipo : {{ ctrl.type }}</li>-->
+      <!--</ul>-->
+    </div>
+
+
+    <user ng-repeat="tech in $ctrl.techs" tech="tech"></user>
+  </div>
+</div>

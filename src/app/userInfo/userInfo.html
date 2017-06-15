@@ -1,0 +1,53 @@
+<div class="main-container">
+  <cabecera></cabecera>
+  <main class="main">
+    <div class="user user-info">
+      <small class="id">#{{ $ctrl.userInfo.id }}</small>
+      <img class="user-logo" ng-src="{{ $ctrl.userInfo.avatar_url }}"/>
+      <h3 class="user-link">
+        {{ $ctrl.userInfo.login }}
+        <span ng-if="$ctrl.userInfo.site_admin">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+        </span>
+      </h3>
+      <div class="user-stars">
+        <i ng-show="$ctrl.userInfo.stars == 0" class="fa fa-star-o" aria-hidden="true"></i>
+        <span ng-show="$ctrl.userInfo.stars > 0" class="stars" ng-repeat="i in $ctrl.getStars() track by $index">
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span>
+      </div>
+
+      <h4>Tipo: <span class="type-text">{{ $ctrl.userInfo.type }}</span></h4>
+      <h4>Bio:</h4>
+      <p class="bio">{{ $ctrl.userInfo.bio }}</p>
+      <hr>
+      <a class="user-update" ng-click="$ctrl.showUpdate( $ctrl.userInfo.id )">
+        Editar usuario
+        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+      </a>
+      <div class="form-update" ng-show="$ctrl.showUpdateForm == true ">
+        <!--Actualizar nombre-->
+        <label for="user-name">
+          Alias:
+          <br>
+          <input type="text" ng-model="$ctrl.userInfo.login" id="user-name">
+        </label>
+        <label for="user-bio">
+          Bio:
+          <br>
+          <textarea name="user-bio" id="user-bio" cols="" rows="5" ng-model="$ctrl.userInfo.bio"></textarea>
+        </label>
+        <button ng-click="$ctrl.updateUser($ctrl.userInfo.id)">Actualizar datos</button>
+        <hr>
+      </div>
+      <!--Meter icono-->
+      <a class="user-delete"
+         ng-hide="$ctrl.userInfo.site_admin == true"
+         ng-click="$ctrl.deleteUser( $ctrl.userInfo.id )">Borrar usuario</a>
+    </div>
+  </main>
+  <pie></pie>
+</div>
+
+
+
